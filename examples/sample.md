@@ -1,4 +1,4 @@
-## m2h (Markdown to HTML)
+# m2h (Markdown to HTML)
 
 This is a simple CLI tool that converts markdown to HTML.
 
