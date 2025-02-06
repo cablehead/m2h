@@ -2,6 +2,13 @@
 name = "m2h"
 version = "0.1.0"
 edition = "2021"
+description = "Convert Markdown to HTML with syntax highlighting."
+license = "MIT"
+repository = "https://github.com/cablehead/m2h"
+readme = "README.md"
+homepage = "https://github.com/cablehead/m2h"
+keywords = ["markdown", "html", "syntax-highlighting", "cli"]
+categories = ["text-processing", "command-line-utilities"]
 
 [dependencies]
 clap = { version = "4.5.28", features = ["derive"] }
