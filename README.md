@@ -89,6 +89,11 @@ This will output the corresponding CSS, which you can include in your HTML.
 3. Include `theme.css` in your webpage to style the syntax highlighting
    dynamically.
 
+## Built With 🙏
+
+- [pulldown-cmark](https://crates.io/crates/pulldown-cmark) - Markdown parsing
+- [syntect](https://crates.io/crates/syntect) - Syntax highlighting
+
 ## License
 
 MIT License
