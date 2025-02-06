@@ -4,9 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minimum</title>
+    <style id="theme-style"></style>
     <style>
-        {{ theme | safe }}
-
         body {
       	  margin: 0 auto;
       	  max-width: 600px;
@@ -30,15 +29,31 @@
 					font-family: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono",
           "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono",
           "Courier New", monospace;
-      	  line-height: 1.3;
       	  padding: 1em;
       	  border-radius: 0.25em;
-      	  background-color: #4C566A;
+      	  background-color: #3B4252;
+					color: #E5E9F0;
 					overflow: hidden;
       }
     </style>
   </head>
   <body>
     {{ content | safe }}
+
+    <script>
+        (function() {
+            const themeSource = new EventSource('/theme');
+            const styleTag = document.getElementById('theme-style');
+
+            themeSource.onmessage = function(event) {
+                styleTag.textContent = event.data;
+            };
+
+            themeSource.onerror = function(error) {
+                console.error('Error with theme SSE connection:', error);
+                themeSource.close();
+            };
+        })();
+    </script>
   </body>
 </html>

@@ -4,6 +4,9 @@ This is a simple CLI tool that converts markdown to HTML.
 
 ```bash
 $ cat sample.md | m2h
+```
+
+```html
 <h2>m2h (Markdown to HTML)</h2>
 <p>This is a simple CLI tool that converts markdown to HTML.</p>
 ...

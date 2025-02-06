@@ -12,7 +12,8 @@ use xs.nu *
     }
 
     {method: "GET" , path: "/theme"} => {
-      .cat -f | each { to json -r | append "\n" | str join }
+      .response {headers: {"Content-Type": "text/event-stream"}}
+      .cat -f | where topic == "theme" | each { .cas | lines | each { $"data: ($in)\n" } | append "\n" | str join }
     }
 
     _ => {
